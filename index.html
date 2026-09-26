@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Juned Rahaman — Psychology, Neuropsychology & AI. Personal portfolio, research, projects and ideas.">
+  <meta name="theme-color" content="#0b0d10">
+  <title>Juned Rahaman — Psychology × Neuropsychology × AI</title>
+  <style>
+    :root{
+      --bg:#f5f5f2; --surface:#ffffff; --ink:#101216; --muted:#646871;
+      --line:#dedfdc; --accent:#3459e6; --accent-soft:#eaf0ff;
+      --dark:#0b0d10; --dark-2:#15181d; --max:1180px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    nav{position:fixed;z-index:10;top:0;left:0;right:0;background:rgba(245,245,242,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(222,223,220,.75)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:800;letter-spacing:-.04em}
+    .brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:26px;font-size:14px;color:#555960}
+    .navlinks a:hover{color:var(--ink)}
+    .nav-cta{border:1px solid var(--ink);padding:8px 14px;border-radius:999px;font-size:13px;font-weight:700}
+    .hero{min-height:100vh;display:grid;align-items:center;padding:130px 0 80px;background:radial-gradient(circle at 80% 30%,#dfe7ff 0,transparent 28%),var(--bg)}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:750;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:22px}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+    h1{font-size:clamp(58px,9vw,116px);line-height:.9;letter-spacing:-.075em;max-width:1000px}
+    .hero h1 em{font-style:normal;color:var(--accent)}
+    .lead{font-size:clamp(19px,2.3vw,27px);line-height:1.35;max-width:760px;color:#454951;margin-top:34px;letter-spacing:-.025em}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;font-weight:750;font-size:14px;border:1px solid var(--ink);transition:.2s transform,.2s background}
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:var(--ink);color:white}
+    .btn.secondary{background:transparent}
+    .scroll{margin-top:90px;color:#777;font-size:12px;text-transform:uppercase;letter-spacing:.14em}
+    section{padding:110px 0}
+    .section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:48px}
+    .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:800}
+    h2{font-size:clamp(36px,5vw,62px);line-height:.98;letter-spacing:-.055em;margin-top:10px}
+    .section-intro{max-width:460px;color:var(--muted)}
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}
+    .about-copy{font-size:24px;line-height:1.42;letter-spacing:-.025em}
+    .about-copy strong{color:var(--accent)}
+    .facts{border-top:1px solid var(--line)}
+    .fact{display:flex;justify-content:space-between;gap:30px;padding:17px 0;border-bottom:1px solid var(--line);font-size:14px}
+    .fact b{font-weight:700}
+    .fact span{color:var(--muted);text-align:right}
+    .dark{background:var(--dark);color:#f4f5f7}
+    .dark .section-intro{color:#a6abb3}
+    .dark .kicker{color:#8da7ff}
+    .focus-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#2a2e35;border:1px solid #2a2e35}
+    .focus{background:var(--dark);padding:28px;min-height:210px}
+    .focus-num{color:#7f8792;font-size:12px}
+    .focus h3{font-size:21px;letter-spacing:-.03em;margin-top:70px}
+    .focus p{font-size:14px;color:#a6abb3;margin-top:10px}
+    .research{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+    .research-card{background:var(--surface);border:1px solid var(--line);padding:38px;border-radius:24px}
+    .tag{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:6px 9px;border-radius:999px}
+    .research-card h3{font-size:32px;line-height:1.05;letter-spacing:-.045em;margin:22px 0}
+    .research-card p{color:var(--muted)}
+    .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+    .pill{border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:12px;color:#555960}
+    .timeline{border-left:1px solid var(--line);margin-left:9px}
+    .edu{position:relative;padding:0 0 42px 38px}
+    .edu:last-child{padding-bottom:0}
+    .edu:before{content:"";position:absolute;width:9px;height:9px;background:var(--accent);border-radius:50%;left:-5px;top:8px;box-shadow:0 0 0 5px var(--bg)}
+    .edu .year{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:800}
+    .edu h3{font-size:25px;letter-spacing:-.03em;margin:7px 0}
+    .edu p{color:var(--muted)}
+    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .skill{padding:26px;border:1px solid var(--line);background:var(--surface);border-radius:18px}
+    .skill h3{font-size:17px}
+    .skill p{color:var(--muted);font-size:14px;margin-top:8px}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .project{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px;min-height:260px;display:flex;flex-direction:column}
+    .project .type{font-size:11px;color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+    .project h3{font-size:25px;letter-spacing:-.035em;margin-top:55px}
+    .project p{font-size:14px;color:var(--muted);margin-top:9px}
+    .project a{margin-top:auto;color:var(--accent);font-size:13px;font-weight:800;padding-top:20px}
+    .cta{background:var(--accent);color:white;border-radius:30px;padding:65px;display:flex;justify-content:space-between;gap:40px;align-items:end}
+    .cta h2{max-width:720px}
+    .cta p{color:#dfe6ff;max-width:420px}
+    .cta .btn{border-color:white;color:white}
+    footer{padding:30px 0 50px;color:#777;font-size:13px;display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:900px){
+      .navlinks{display:none}
+      .about-grid,.research{grid-template-columns:1fr;gap:45px}
+      .focus-grid{grid-template-columns:1fr 1fr}
+      .skills,.projects{grid-template-columns:1fr 1fr}
+      .cta{display:block;padding:40px}
+      .cta p{margin-top:25px}
+    }
+    @media(max-width:600px){
+      .wrap{width:min(var(--max),calc(100% - 28px))}
+      .hero{padding-top:110px}
+      .focus-grid,.skills,.projects{grid-template-columns:1fr}
+      .focus{min-height:160px}
+      .focus h3{margin-top:45px}
+      section{padding:78px 0}
+      .section-head{display:block}
+      .section-intro{margin-top:20px}
+      .about-copy{font-size:21px}
+      .cta{border-radius:22px}
+      footer{display:block}
+      footer div+div{margin-top:8px}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="brand" href="#">Juned<span>.</span></a>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#focus">Focus</a><a href="#research">Research</a><a href="#education">Education</a><a href="#projects">Projects</a>
+    </div>
+    <a class="nav-cta" href="https://www.linkedin.com/in/juned-rahaman-651001420/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> Psychology × Neuropsychology × AI</div>
+    <h1>Understanding<br>the <em>human mind.</em></h1>
+    <p class="lead">I’m Juned Rahaman — a psychology graduate and MSc Neuropsychology student exploring cognition, human behaviour, research, and the emerging relationship between psychology and artificial intelligence.</p>
+    <div class="actions">
+      <a class="btn primary" href="#research">Explore my work ↓</a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/juned-rahaman-651001420/" target="_blank" rel="noopener">View LinkedIn ↗</a>
+    </div>
+    <div class="scroll">Scroll to explore</div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">01 / About</div><h2>A psychologist<br>in progress.</h2></div>
+      <p class="section-intro">My work sits at the intersection of understanding people and understanding the systems that increasingly shape how people think, learn and live.</p>
+    </div>
+    <div class="about-grid">
+      <p class="about-copy">I completed my <strong>BSc in Clinical Psychology</strong> and am now pursuing an <strong>MSc in Neuropsychology</strong> at S-VYASA University in Bengaluru. Alongside psychology, I’m deliberately building fluency in <strong>AI, research, technology and creative communication.</strong></p>
+      <div class="facts">
+        <div class="fact"><b>Based in</b><span>Bengaluru, India</span></div>
+        <div class="fact"><b>Current study</b><span>MSc Neuropsychology</span></div>
+        <div class="fact"><b>Academic foundation</b><span>BSc Clinical Psychology</span></div>
+        <div class="fact"><b>Interests</b><span>Cognition · Behaviour · AI · Research</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="focus" class="dark">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">02 / Focus</div><h2>Questions worth<br>exploring.</h2></div>
+      <p class="section-intro">Five areas currently shaping what I study, build and think about.</p>
+    </div>
+    <div class="focus-grid">
+      <article class="focus"><span class="focus-num">01</span><h3>Neuropsychology</h3><p>Brain–behaviour relationships, cognition and assessment.</p></article>
+      <article class="focus"><span class="focus-num">02</span><h3>Cognitive Science</h3><p>Memory, attention, decision-making and human learning.</p></article>
+      <article class="focus"><span class="focus-num">03</span><h3>Human Behaviour</h3><p>Understanding the patterns behind how people think and act.</p></article>
+      <article class="focus"><span class="focus-num">04</span><h3>AI × Psychology</h3><p>Exploring what AI changes about psychological work and human cognition.</p></article>
+      <article class="focus"><span class="focus-num">05</span><h3>Research</h3><p>Turning questions about behaviour into testable ideas.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">03 / Research</div><h2>Curiosity,<br>made testable.</h2></div>
+      <p class="section-intro">My current academic work is centred on cognition and the everyday factors that influence it.</p>
+    </div>
+    <div class="research">
+      <article class="research-card">
+        <span class="tag">Current dissertation</span>
+        <h3>Impact of Sleep Quality on Working Memory Among Young Adults</h3>
+        <p>An investigation into the relationship between sleep quality and working-memory performance in young adults.</p>
+        <div class="pillrow"><span class="pill">Sleep</span><span class="pill">Working memory</span><span class="pill">Young adults</span><span class="pill">Cognition</span></div>
+      </article>
+      <article class="research-card">
+        <span class="tag">Research interests</span>
+        <h3>From questions to evidence.</h3>
+        <p>Areas I’m interested in studying include memory, stress, decision-making, sleep, cognition and psychological measurement.</p>
+        <div class="pillrow"><span class="pill">Memory</span><span class="pill">Stress</span><span class="pill">Decision-making</span><span class="pill">Assessment</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="dark">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">04 / Education</div><h2>The foundation.</h2></div>
+      <p class="section-intro">A continuing path from psychology into the brain, cognition and behaviour.</p>
+    </div>
+    <div class="timeline">
+      <article class="edu">
+        <div class="year">Current</div>
+        <h3>MSc Neuropsychology</h3>
+        <p>S-VYASA University · Bengaluru, India</p>
+      </article>
+      <article class="edu">
+        <div class="year">Completed</div>
+        <h3>BSc Clinical Psychology</h3>
+        <p>Undergraduate foundation in psychology and clinical psychology.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">05 / Skills</div><h2>What I’m<br>building.</h2></div>
+      <p class="section-intro">A deliberately interdisciplinary toolkit—psychology first, with technology and communication alongside it.</p>
+    </div>
+    <div class="skills">
+      <article class="skill"><h3>Psychological Research</h3><p>Research questions, literature work, methodology and academic writing.</p></article>
+      <article class="skill"><h3>Cognition & Behaviour</h3><p>Memory, attention, stress, decision-making and human behaviour.</p></article>
+      <article class="skill"><h3>AI Tools</h3><p>Exploring practical applications of AI in learning, research and knowledge work.</p></article>
+      <article class="skill"><h3>Python</h3><p>Building technical fluency for analysis, automation and future research workflows.</p></article>
+      <article class="skill"><h3>Writing & Content</h3><p>Turning complex ideas into clear, accessible communication.</p></article>
+      <article class="skill"><h3>Visual Communication</h3><p>Graphic design, typography and video editing as complementary creative skills.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="dark">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">06 / Projects</div><h2>Still becoming.<br>Still building.</h2></div>
+      <p class="section-intro">A living portfolio. More work will appear here as I turn ideas into experiments, research and projects.</p>
+    </div>
+    <div class="projects">
+      <article class="project"><div class="type">Research</div><h3>Sleep × Working Memory</h3><p>Current dissertation exploring the relationship between sleep quality and working memory among young adults.</p></article>
+      <article class="project"><div class="type">Exploration</div><h3>AI × Psychology</h3><p>Ongoing exploration of how AI may reshape psychological research, practice and knowledge work.</p></article>
+      <article class="project"><div class="type">Creative</div><h3>Ideas & Communication</h3><p>Writing, typography and visual experiments around psychology, behaviour and technology.</p></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <div class="kicker" style="color:#dce5ff">07 / Connect</div>
+        <h2>Let’s talk about psychology, cognition, research or AI.</h2>
+      </div>
+      <div>
+        <p>I’m building this portfolio as my work evolves. For the professional profile and current background, connect with me on LinkedIn.</p>
+        <div class="actions"><a class="btn" href="https://www.linkedin.com/in/juned-rahaman-651001420/" target="_blank" rel="noopener">Connect on LinkedIn ↗</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div>© 2026 Juned Rahaman</div>
+  <div>Psychology · Neuropsychology · AI</div>
+</footer>
+</body>
+</html>
